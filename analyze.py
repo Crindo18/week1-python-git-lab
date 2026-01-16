@@ -6,17 +6,12 @@ import matplotlib.pyplot as plt
 # CONFIG (EDIT THIS ONLY)
 # =======================
 DATASET_URL = "https://raw.githubusercontent.com/mwaskom/seaborn-data/master/flights.csv"
-CATEGORY_COL = "day"
-VALUE_COL = "total_bill"
+CATEGORY_COL = "month"
+VALUE_COL = "passengers"
 OUTPUT_PATH = os.path.join("output", "chart.png")
 
 
 def main():
-    if "PASTE_" in DATASET_URL or "PASTE_" in CATEGORY_COL or "PASTE_" in VALUE_COL:
-        raise ValueError(
-            "Update the CONFIG section in analyze.py with a real dataset URL and column names."
-        )
-
     df = pd.read_csv(DATASET_URL)
 
     # Terminal summary (required)
@@ -53,4 +48,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
